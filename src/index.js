@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-function Square(props) {
+export function Square(props) {
     return (
         <button
             className="square"
@@ -13,7 +13,7 @@ function Square(props) {
     );
 }
 
-class Board extends React.Component {
+export class Board extends React.Component {
     renderSquare(i) {
         return (
             <Square
@@ -46,7 +46,7 @@ class Board extends React.Component {
     }
 }
 
-class Game extends React.Component {
+export class Game extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -78,7 +78,7 @@ class Game extends React.Component {
     jumpTo(step) {
         this.setState({
             stepNumber: step,
-            xIsNext: (step % 2) == 0,
+            xIsNext: (step % 2) === 0,
         });
     }
 
